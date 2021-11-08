@@ -26,14 +26,14 @@ type DocumentDisplayStatus = '已檢舉' | '已排程稽查' | '陳述意見期'
 type FactoryDisplayStatus = {
   type: FactoryDisplayStatusType,
   name: string,
-  documentDisplayStatuses: ('疑似工廠' | DocumentDisplayStatus)[],
+  documentDisplayStatuses: ('疑似黑熊出沒痕跡' | DocumentDisplayStatus)[],
   color: string
 }
 export const FactoryDisplayStatuses: FactoryDisplayStatus[] = [
   {
     type: 'default',
     name: '未處理',
-    documentDisplayStatuses: ['疑似工廠'],
+    documentDisplayStatuses: ['疑似黑熊出沒痕跡'],
     color: '#A22A29'
   },
   {

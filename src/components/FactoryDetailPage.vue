@@ -20,11 +20,11 @@
 
         <v-card-text>
           <div class="d-flex justify-between align-items-center mb-3">
-            <span class="factory-status-title">工廠狀態</span>
+            <span class="factory-status-title">黑熊出沒痕跡狀態</span>
 
             <v-btn @click="copyToClipboard" rounded v-if="$vuetify.breakpoint.mdAndUp" :outlined="showCopiedMessage" :color="showCopiedMessage ? null : 'white'">
               <v-icon class="mr-1">mdi-share-variant</v-icon>
-              {{ showCopiedMessage ? '已複製連結' : '分享工廠' }}
+              {{ showCopiedMessage ? '已複製連結' : '分享黑熊出沒痕跡' }}
             </v-btn>
 
             <span v-else>
@@ -38,7 +38,7 @@
           </p>
 
           <p class="caption mb-0" style="color: #A1A1A1;">
-            工廠編號 {{ factoryId }} <br>
+            黑熊出沒痕跡編號 {{ factoryId }} <br>
             {{ lastUpdatedAt }}
           </p>
 
@@ -83,22 +83,22 @@
           </v-btn>
 
           <div v-if="full || $vuetify.breakpoint.mdAndUp" class="mt-4">
-            <h2 class="mb-5">其他工廠資訊</h2>
+            <h2 class="mb-5">其他黑熊出沒痕跡資訊</h2>
 
-            <h3 class="mb-1">工廠外部文字</h3>
+            <h3 class="mb-1">黑熊出沒痕跡外部文字</h3>
             <p class="mb-3" v-if="factoryName">{{ factoryName }}</p>
             <v-btn class="d-block mb-5" outlined @click="startUpdateFactoryCommentFor('name')">
               {{ factoryName ? '更改外部文字' : '回報外部文字' }}
             </v-btn>
 
-            <h3 class="mb-1">工廠類型</h3>
+            <h3 class="mb-1">黑熊出沒痕跡類型</h3>
             <p class="mb-3" v-if="factoryType">{{ factoryType }}</p>
             <v-btn class="d-block mb-5" outlined @click="startUpdateFactoryCommentFor('factory_type')">
-              {{ factoryType ? '更改工廠類型' : '回報工廠類型' }}
+              {{ factoryType ? '更改黑熊出沒痕跡類型' : '回報黑熊出沒痕跡類型' }}
             </v-btn>
 
-            <h3 class="mb-1">工廠描述</h3>
-            <v-btn outlined @click="startUpdateFactoryCommentFor('others')" class="mb-2">補充工廠描述</v-btn>
+            <h3 class="mb-1">黑熊出沒痕跡描述</h3>
+            <v-btn outlined @click="startUpdateFactoryCommentFor('others')" class="mb-2">補充黑熊出沒痕跡描述</v-btn>
 
             <div v-for="(desc, index) in pastDescriptions" :key="index" class="mt-2" style="font-size: 14px">
               <p class="color-gray-light mb-1">{{ desc.date }}</p>
@@ -110,7 +110,7 @@
 
       <div class="factory-detail-scroller px-4 py-5" v-show="!appState.factoryData">
         <h1 class="secondary--text mb-5">請選擇一個地標</h1>
-        <p>請選擇一間工廠查看工廠詳細資訊。</p>
+        <p>請選擇一個黑熊出沒痕跡查看地點詳細資訊。</p>
       </div>
 
       <div class="sidebar-collapse-button d-flex align-items-center justify-center" v-show="$vuetify.breakpoint.mdAndUp" @click="toggleFactoryDetail">

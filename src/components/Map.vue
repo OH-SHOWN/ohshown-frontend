@@ -20,7 +20,7 @@
 
     <div class="factory-button-group flex justify-center mb-5 mb-8-md" v-if="!appState.selectFactoryMode">
       <v-btn @click="onClickCreateFactoryButton" color="primary" rounded large>
-        我想新增可疑工廠
+        我想通報疑似黑熊出沒痕跡
       </v-btn>
     </div>
   </div>

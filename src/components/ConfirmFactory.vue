@@ -1,11 +1,11 @@
 <template>
   <div class="confirm-factory-page">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12">
-      <h2 class="mt-2 mb-2 secondary--text">確認及補充工廠資訊</h2>
+      <h2 class="mt-2 mb-2 secondary--text">確認及補充黑熊出沒痕跡資訊</h2>
 
-      <p>請確認工廠地點及照片，並補充工廠資訊。</p>
+      <p>請確認黑熊出沒痕跡地點及照片，並補充痕跡資訊。</p>
 
-      <h3 class="mt-7 mb-2 required primary--text">工廠地點</h3>
+      <h3 class="mt-7 mb-2 required primary--text">黑熊出沒痕跡地點</h3>
 
       <p>
         返回<a @click="gotoStepOne">步驟(1/3)</a>編輯
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <h3 class="mt-7 mb-2 required primary--text">工廠照片</h3>
+      <h3 class="mt-7 mb-2 required primary--text">黑熊出沒痕跡照片</h3>
 
       <p>
         返回<a @click="gotoStepTwo">步驟(2/3)</a>編輯
@@ -56,19 +56,19 @@
 
       <hr>
 
-      <h2 class="mt-5 secondary--text mb-5">其他工廠資訊（非必填）</h2>
+      <h2 class="mt-5 secondary--text mb-5">其他黑熊出沒痕跡資訊（非必填）</h2>
 
-      <p>提供明確的工廠資訊能夠幫助我們更快速的填寫公文。</p>
+      <p>提供明確的黑熊出沒痕跡資訊能夠幫助我們更快速地搜索追蹤。</p>
 
-      <h3 class="mt-5 mb-2 primary--text">工廠描述</h3>
+      <h3 class="mt-5 mb-2 primary--text">黑熊出沒痕跡描述</h3>
 
-      <v-textarea outlined solo v-model="formState.others" placeholder="例：常常散發異味" />
+      <v-textarea outlined solo v-model="formState.others" placeholder="例：雞舍疑似有熊造訪" />
 
-      <h3 class="mt-5 mb-2 primary--text">工廠外部文字</h3>
+      <h3 class="mt-5 mb-2 primary--text">疑似黑熊出沒地點可鑑別特徵，例如雞舍招牌名稱</h3>
 
-      <v-text-field outlined v-model="formState.name" placeholder="例：小明化工廠" color="primary" />
+      <v-text-field outlined v-model="formState.name" placeholder="例：雞舍名稱" color="primary" />
 
-      <h3 class="mt-5 mb-2 primary--text">工廠類型</h3>
+      <h3 class="mt-5 mb-2 primary--text">黑熊出沒痕跡類型</h3>
 
       <v-select :items="factoryTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" />
 

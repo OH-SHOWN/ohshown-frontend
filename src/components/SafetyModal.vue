@@ -6,7 +6,7 @@
           <v-carousel-item class="page pa-3">
             <h1 class="mt-3 pb-1 mb-4">安全須知</h1>
             <p>
-              請參考以下建議，前往違章工廠拍照蒐證
+              請參考以下建議，前往違章黑熊出沒痕跡拍照蒐證
             </p>
           </v-carousel-item>
           <v-carousel-item class="page pa-3">

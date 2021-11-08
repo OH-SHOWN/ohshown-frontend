@@ -9,7 +9,7 @@
       </div>
 
       <v-spacer></v-spacer>
-      <v-toolbar-title class="secondary--text">新增可疑工廠 步驟 ({{ appState.createStepIndex }}/3)</v-toolbar-title>
+      <v-toolbar-title class="secondary--text">新增可疑黑熊出沒痕跡 步驟 ({{ appState.createStepIndex }}/3)</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <div class="btn-container">
@@ -20,8 +20,8 @@
             </v-btn>
           </template>
           <v-card>
-            <v-card-title class="secondary--text">放棄新增可疑工廠嗎？</v-card-title>
-            <v-card-text>放棄新增可疑工廠時，你將遺失所有已輸入的資料。下次需重新填寫。</v-card-text>
+            <v-card-title class="secondary--text">放棄新增可疑黑熊出沒痕跡嗎？</v-card-title>
+            <v-card-text>放棄新增可疑黑熊出沒痕跡時，你將遺失所有已輸入的資料。下次需重新填寫。</v-card-text>
             <v-container class="text-center">
               <v-btn width="100%" x-large rounded color="primary" @click="discardDialog = false">繼續填寫資料</v-btn>
               <a class="d-block mt-4 text-decoration-underline" @click="cancelCreateFactory">放棄新增</a>
@@ -33,20 +33,20 @@
 
     <!-- AppBar for Desktop -->
     <v-app-bar fixed color="white" v-show="$vuetify.breakpoint.mdAndUp">
-      <v-toolbar-title>新增可疑工廠</v-toolbar-title>
+      <v-toolbar-title>新增可疑黑熊出沒痕跡</v-toolbar-title>
 
       <div class="ml-15 desktop-step-item" @click="switchStep(1)">
-        <span>選擇工廠位置</span>
+        <span>選擇黑熊出沒痕跡位置</span>
         <v-icon class='mr-1'>mdi-chevron-right</v-icon>
       </div>
 
       <div class="desktop-step-item" :class="{ inactive: appState.createStepIndex < 2 }"  @click="switchStep(2)">
-        <span>上傳工廠照片</span>
+        <span>上傳黑熊出沒痕跡照片</span>
         <v-icon class='mr-1'>mdi-chevron-right</v-icon>
       </div>
 
       <div class="desktop-step-item" :class="{ inactive: appState.createStepIndex < 3 }"  @click="switchStep(3)">
-        <span>確認及補充工廠資訊</span>
+        <span>確認及補充黑熊出沒痕跡資訊</span>
       </div>
 
       <v-spacer></v-spacer>
@@ -58,8 +58,8 @@
           </v-btn>
         </template>
         <v-card>
-          <v-card-title class="secondary--text">放棄新增可疑工廠嗎？</v-card-title>
-          <v-card-text>放棄新增可疑工廠時，你將遺失所有已輸入的資料。下次需重新填寫。</v-card-text>
+          <v-card-title class="secondary--text">放棄新增可疑黑熊出沒痕跡嗎？</v-card-title>
+          <v-card-text>放棄新增可疑黑熊出沒痕跡時，你將遺失所有已輸入的資料。下次需重新填寫。</v-card-text>
           <v-container class="text-center">
             <v-btn width="100%" x-large rounded color="primary" @click="discardDialog = false">繼續填寫資料</v-btn>
             <a class="d-block mt-4 text-decoration-underline" @click="cancelCreateFactory">放棄新增</a>
@@ -353,7 +353,7 @@ export default createComponent({
         if (!mapController.value) return
 
         if (!appState.canPlaceFactory) {
-          alertActions.showAlert('此地點不在農地範圍內，\n請回報在農地範圍內的工廠。')
+          alertActions.showAlert('此地點不在農地範圍內，\n請回報在農地範圍內的黑熊出沒痕跡。')
           return
         }
 

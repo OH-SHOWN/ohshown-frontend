@@ -1,6 +1,6 @@
 <template>
   <app-modal :open="open" :dismiss="closeModal" class="page">
-    <h2>工廠照片</h2>
+    <h2>黑熊出沒痕跡照片</h2>
 
     <div class="images-grid">
       <div class="image-card" :key="url" v-for="url in imageUrls" >

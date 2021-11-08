@@ -16,7 +16,7 @@
             請至手機系統設定開啟位置權限。
           </p>
 
-          <div class="outline-button" @click="openAdd">如何新增一筆<br>違章工廠的資料？</div>
+          <div class="outline-button" @click="openAdd">如何新增一筆<br>違章黑熊出沒痕跡的資料？</div>
           <div class="outline-button" @click="openUpdate">如何在一筆資料裡<br>補充更多資訊？</div>
         </div>
 
@@ -24,7 +24,7 @@
 
           <carousel :per-page="1" paginationActiveColor='#6E8501' paginationColor='#e3e3e3' :paginationPadding="5" ref="createCarousel">
             <slide v-for="(image, index) in addImages" :key="image">
-              <h2>新增違章工廠({{index + 1}}/7)</h2>
+              <h2>新增違章黑熊出沒痕跡({{index + 1}}/7)</h2>
               <img :src="image">
             </slide>
           </carousel>
@@ -33,7 +33,7 @@
         <div id="tutorial-update-factory" v-show="isUpdate">
           <carousel :per-page="1" paginationActiveColor='#6E8501' paginationColor='#e3e3e3' :paginationPadding="5" ref="updateCarousel">
             <slide v-for="(image, index) in updateImages" :key="image">
-              <h2>補充工廠資訊({{index + 1}}/4)</h2>
+              <h2>補充黑熊出沒痕跡資訊({{index + 1}}/4)</h2>
               <img :src="image">
             </slide>
           </carousel>

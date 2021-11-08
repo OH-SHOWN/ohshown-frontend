@@ -1,11 +1,11 @@
 <template>
   <div class="image-upload-form w-100">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12 pb-md-8">
-      <h2 class="mb-4 secondary--text">上傳工廠照片</h2>
+      <h2 class="mb-4 secondary--text">上傳黑熊出沒痕跡照片</h2>
 
-      <p>請至少上傳一張工廠照片。</p>
+      <p>請至少上傳一張黑熊出沒痕跡照片。</p>
 
-      <h3 class="mb-3 mt-7 primary--text required">工廠照片</h3>
+      <h3 class="mb-3 mt-7 primary--text required">黑熊出沒痕跡照片</h3>
 
       <div class="flex align-items-center mb-3">
         <v-btn :disabled="uploading" outlined class="mr-3">

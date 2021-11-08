@@ -15,19 +15,19 @@ test('show the corresponding page', async function () {
   expect(screen.getByRole('heading', { name: '使用說明' })).toBeInTheDocument()
   expect(screen.queryByTestId('back-button')).not.toBeInTheDocument()
 
-  /* show the 新增違章工廠 page when users click the "add" button */
-  await fireEvent.click(screen.getByText('如何新增一筆違章工廠的資料？'))
-  expect(screen.getByRole('heading', { name: /^新增違章工廠/i })).toBeInTheDocument()
+  /* show the 新增違章黑熊出沒痕跡 page when users click the "add" button */
+  await fireEvent.click(screen.getByText('如何新增一筆違章黑熊出沒痕跡的資料？'))
+  expect(screen.getByRole('heading', { name: /^新增違章黑熊出沒痕跡/i })).toBeInTheDocument()
 
-  /* show the 使用說明 page when users click the "back" button in the 新增違章工廠 page */
+  /* show the 使用說明 page when users click the "back" button in the 新增違章黑熊出沒痕跡 page */
   await fireEvent.click(screen.getByTestId('back-button'))
   expect(screen.getByRole('heading', { name: '使用說明' })).toBeInTheDocument()
 
-  /* show the 補充工廠資訊 page when users click the "update" button */
+  /* show the 補充黑熊出沒痕跡資訊 page when users click the "update" button */
   await fireEvent.click(screen.getByText('如何在一筆資料裡補充更多資訊？'))
-  expect(screen.getByRole('heading', { name: /^補充工廠資訊/i })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: /^補充黑熊出沒痕跡資訊/i })).toBeInTheDocument()
 
-  /* show the 使用說明 page when users click the "back" button in the 補充工廠資訊 page */
+  /* show the 使用說明 page when users click the "back" button in the 補充黑熊出沒痕跡資訊 page */
   await fireEvent.click(screen.getByTestId('back-button'))
   expect(screen.getByRole('heading', { name: '使用說明' })).toBeInTheDocument()
 })
@@ -46,7 +46,7 @@ test('close the modal and reset the page to 使用說明 when users click the cl
   })
 
   /* Act */
-  await fireEvent.click(screen.getByText('如何新增一筆違章工廠的資料？'))
+  await fireEvent.click(screen.getByText('如何新增一筆違章黑熊出沒痕跡的資料？'))
   await fireEvent.click(screen.getByTestId('modal-close'))
 
   /* Assert */

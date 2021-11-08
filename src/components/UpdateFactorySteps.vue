@@ -78,8 +78,8 @@
       <div>
         <h3 class="mt-4 mb-2 primary--text">{{ updateFormTitle }}</h3>
 
-        <v-textarea outlined solo v-model="formState.others" placeholder="例：常常散發異味" v-if="appState.isEditComment" />
-        <v-text-field outlined v-model="formState.name" placeholder="例：小明化工廠" color="primary" v-if="appState.isEditName" />
+        <v-textarea outlined solo v-model="formState.others" placeholder="例：雞舍疑似有熊造訪" v-if="appState.isEditComment" />
+        <v-text-field outlined v-model="formState.name" placeholder="例：雞舍名稱" color="primary" v-if="appState.isEditName" />
         <v-select :items="factoryTypeItems" v-model="formState.factory_type" solo outlined placeholder="未選擇" v-if="appState.isEditType" />
 
       </div>
@@ -99,8 +99,8 @@
         <div>
           <h3 class="mb-3">{{ updateFormTitle }}</h3>
 
-          <v-textarea outlined solo v-model="formState.others" placeholder="例：常常散發異味" v-if="appState.isEditComment" />
-          <v-text-field outlined v-model="formState.name" placeholder="例：小明化工廠" color="primary" v-if="appState.isEditName" />
+          <v-textarea outlined solo v-model="formState.others" placeholder="例：雞舍疑似有熊造訪" v-if="appState.isEditComment" />
+          <v-text-field outlined v-model="formState.name" placeholder="例：雞舍名稱" color="primary" v-if="appState.isEditName" />
           <v-select :items="factoryTypeItems" v-model="formState.factory_type" solo outlined placeholder="未選擇" v-if="appState.isEditType" />
         </div>
         <v-btn x-large rounded class="w-100" :disabled="!isCurrentFieldValid" style="width: 100%; max-width: 345px; margin: 0 auto;" @click="submitUpdateFactory" color="primary">
@@ -219,27 +219,27 @@ export default createComponent({
     })
 
     const updateFormAppTitle = computed(() => {
-      return appState.isEditComment ? '補充工廠描述'
-        : appState.isEditName ? '更改外部文字' : '更改工廠類型'
+      return appState.isEditComment ? '補充黑熊出沒痕跡描述'
+        : appState.isEditName ? '更改外部文字' : '更改黑熊出沒痕跡類型'
     })
 
     const updateFormTitle = computed(() => {
       if (appState.isEditComment) {
-        return '工廠描述'
+        return '黑熊出沒痕跡描述'
       } else if (appState.isEditName) {
-        return '工廠外部文字'
+        return '黑熊出沒痕跡外部文字'
       } else if (appState.isEditType) {
-        return '工廠類型'
+        return '黑熊出沒痕跡類型'
       }
     })
 
     const updateFormButton = computed(() => {
       if (appState.isEditComment) {
-        return '新增工廠描述'
+        return '新增黑熊出沒痕跡描述'
       } else if (appState.isEditName) {
-        return '確認更改工廠外部文字'
+        return '確認更改黑熊出沒痕跡外部文字'
       } else if (appState.isEditType) {
-        return '確認更改工廠類型'
+        return '確認更改黑熊出沒痕跡類型'
       }
     })
 

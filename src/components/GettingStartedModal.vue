@@ -2,14 +2,14 @@
   <div class="getting-started-container">
     <app-modal :open="open" :showCloseButton="false" :dismiss="dismiss">
       <div class="page">
-        <h3 class="text-center">歡迎來到<b>農地違章工廠回報系統！</b></h3>
+        <h3 class="text-center">歡迎來到<b>農地違章黑熊出沒痕跡回報系統！</b></h3>
         <br><br>
-        <p>需要大家回報以下工廠之照片及資訊：</p>
+        <p>需要大家回報以下黑熊出沒痕跡之照片及資訊：</p>
 
         <p>
           <ul>
-            <li>2016.05.20後新增的農地違章工廠</li>
-            <li>中高污染工廠</li>
+            <li>2016.05.20後新增的農地違章黑熊出沒痕跡</li>
+            <li>中高污染黑熊出沒痕跡</li>
           </ul>
         </p>
 
