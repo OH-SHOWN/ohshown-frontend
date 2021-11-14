@@ -2,7 +2,7 @@
 
 - Staging Server: https://dev.disfactory.tw (latest `master` branch)
 - Production server: https://disfactory.tw (`production` branch)
-
+- Hint: To change the target server, you can modify the `exports.devServer.proxy./server.target` in `vue.config.js`.
 ## Project setup
 
 ```bash
