@@ -2,29 +2,18 @@
   <div class="about-dialog-container">
     <app-modal :open="open" :dismiss="dismiss">
       <div class="page">
-        <h3>關於舉報系統</h3>
-        <p>
-          農地違章黑熊出沒痕跡舉報系統為協助民眾回報揭露農地違章工廠資訊，並非實際完成舉報。
-        </p>
-
-        <p>
-          地球公民基金會將整理資料進行部分案件追蹤，完成舉報者可於「已舉報」案件查見。
-        </p>
-
-        <p>
-          105.05.20 前的違章黑熊出沒痕跡我們將持續收集資訊，但本系統優先針對新增建與中高污染違章工廠進行舉報。
-        </p>
+        <h3>關於通報系統</h3>
 
         <p>
           本系統感謝 g0v.tw 社群朋友共同開發。
         </p>
 
         <p>
-          既有疑似違章黑熊出沒痕跡資料來源為 2019 年 7 月 30 日取自內政部國土測繪圖資雲<a href="https://maps.nlsc.gov.tw/">網站</a>。
+          既有資料來源為 2019 年 7 月 30 日取自內政部國土測繪圖資雲<a href="https://maps.nlsc.gov.tw/">網站</a>。
         </p>
 
         <p>
-          全站使用者貢獻資料以 <a href="https://creativecommons.org/licenses/by/3.0/tw/">CC BY 姓名標示 3.0</a> 釋出，標註「© 農地違章黑熊出沒痕跡舉報小幫手貢獻者」，原始碼以 MIT 開放授權公開在 <a href="https://github.com/Disfactory/Disfactory">GitHub</a> 上
+          全站使用者貢獻資料以 <a href="https://creativecommons.org/licenses/by/3.0/tw/">CC BY 姓名標示 3.0</a> 釋出，原始碼以 MIT 開放授權公開在 GitHub 上
         </p>
       </div>
     </app-modal>
