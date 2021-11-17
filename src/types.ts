@@ -2,15 +2,15 @@ import Feature from 'ol/Feature'
 
 /* eslint-disable quote-props */
 export const FACTORY_TYPE = [
-  { value: '2-1', text: '金屬: 沖床、銑床、車床、鏜孔' },
-  { value: '2-2', text: '金屬: 焊接、鑄造、熱處理' },
-  { value: '2-3', text: '金屬: 金屬表面處理、噴漆' },
-  { value: '3', text: '塑膠加工、射出' },
-  { value: '4', text: '橡膠加工' },
-  { value: '5', text: '非金屬礦物（石材）' },
-  { value: '6', text: '食品' },
-  { value: '7', text: '皮革' },
-  { value: '8', text: '紡織' },
+  { value: '2-1', text: '痕跡: 爪痕' },
+  { value: '2-2', text: '痕跡: 排遺' },
+  { value: '2-3', text: '痕跡: 植物折痕' },
+  { value: '3', text: '人熊衝突現場痕跡 - 雞舍' },
+  { value: '4', text: '人熊衝突現場痕跡 - 果園' },
+  { value: '5', text: '人熊衝突現場痕跡 - 其他' },
+  { value: '6', text: '死亡' },
+  { value: '7', text: '現場目擊 - 不確定' },
+  { value: '8', text: '現場目擊 - 確定' },
   { value: '9', text: '其他' }
 ] as const
 export type FactoryType = (typeof FACTORY_TYPE)[number]['value']
@@ -21,7 +21,7 @@ export const defaultFactoryDisplayStatuses = [
   'default', 0, 1, 2, 3
 ] as FactoryDisplayStatusType[]
 
-type DocumentDisplayStatus = '已檢舉' | '已排程稽查' | '陳述意見期' | '已勒令停工' | '已發函斷電' | '已排程拆除' | '已拆除' | '不再追蹤'
+type DocumentDisplayStatus = '已通報' | '已排程調查' | '與通報者溝通期' | '已開始進行鑑定' | '鑑定完畢已開始進行調查' | '已至現場調查' | '已調查完畢' | '不再追蹤'
 
 type FactoryDisplayStatus = {
   type: FactoryDisplayStatusType,
@@ -39,19 +39,19 @@ export const FactoryDisplayStatuses: FactoryDisplayStatus[] = [
   {
     type: 0,
     name: '處理中',
-    documentDisplayStatuses: ['已檢舉', '已排程稽查', '陳述意見期', '已勒令停工'],
+    documentDisplayStatuses: ['已通報', '已排程調查', '與通報者溝通期', '已開始進行鑑定'],
     color: '#457287'
   },
   {
     type: 1,
     name: '已斷電',
-    documentDisplayStatuses: ['已發函斷電', '已排程拆除'],
+    documentDisplayStatuses: ['鑑定完畢已開始進行調查', '已至現場調查'],
     color: '#364516'
   },
   {
     type: 2,
     name: '已拆除',
-    documentDisplayStatuses: ['已拆除'],
+    documentDisplayStatuses: ['已調查完畢'],
     color: '#A1A1A1'
   },
   {
