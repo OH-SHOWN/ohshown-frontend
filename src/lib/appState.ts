@@ -12,6 +12,7 @@ export const enum PageState {
   CREATE_FACTORY_1 = 'CREATE_FACTORY_1',
   CREATE_FACTORY_2 = 'CREATE_FACTORY_2',
   CREATE_FACTORY_3 = 'CREATE_FACTORY_3',
+  CREATE_FACTORY_4 = 'CREATE_FACTORY_4',
   UPDATE_FACTORY_IMAGES = 'UPDATE_FACTORY_IMAGES',
   UPDATE_FACTORY_MODE = 'UPDATE_FACTORY_MODE'
 }
@@ -19,7 +20,8 @@ export const enum PageState {
 const CreateFactoryPageState = [
   PageState.CREATE_FACTORY_1,
   PageState.CREATE_FACTORY_2,
-  PageState.CREATE_FACTORY_3
+  PageState.CREATE_FACTORY_3,
+  PageState.CREATE_FACTORY_4,
 ]
 
 const UpdateFactoryPageState = [

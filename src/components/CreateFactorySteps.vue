@@ -46,7 +46,12 @@
       </div>
 
       <div class="desktop-step-item" :class="{ inactive: appState.createStepIndex < 3 }"  @click="switchStep(3)">
-        <span>確認及補充工廠資訊</span>
+        <span>確認及補充工廠資訊step3</span>
+        <v-icon class='mr-1'>mdi-chevron-right</v-icon>
+      </div>
+
+      <div class="desktop-step-item" :class="{ inactive: appState.createStepIndex < 4 }"  @click="switchStep(4)">
+        <span>確認及補充工廠資訊step4</span>
       </div>
 
       <v-spacer></v-spacer>
@@ -175,8 +180,15 @@
       :formState="formState"
     />
 
-    <confirm-factory
+    <detail-form
       v-if="appState.createStepIndex === 3"
+      :formState="formState"
+      :previewImages="uploadedImages"
+      :submit="pageTransition.gotoNextCreate"
+    />
+
+    <confirm-factory
+      v-if="appState.createStepIndex === 4"
       :formState="formState"
       :previewImages="uploadedImages"
       :submit="submitFactory"
@@ -203,13 +215,15 @@ import { FactoryPostData } from '../types'
 import { useGA } from '../lib/useGA'
 import { useBackPressed } from '../lib/useBackPressed'
 import { useModalState } from '../lib/hooks'
+import DetailForm from './DetailForm.vue'
 
 export default createComponent({
   name: 'CreateFactorySteps',
   components: {
     ImageUploadForm,
     ConfirmFactory,
-    SwitchMapModeButton
+    SwitchMapModeButton,
+    DetailForm,
   },
   setup () {
     const [appState, { pageTransition, setFactoryLocation }] = useAppState()
