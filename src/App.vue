@@ -11,14 +11,14 @@
         <v-btn text @click="modalActions.openTutorialModal">
           使用教學
         </v-btn>
+        <v-btn text @click="modalActions.openDistinctionModal">
+          辨識黑熊痕跡
+        </v-btn>
         <v-btn text @click="modalActions.openSafetyModal">
           安全須知
         </v-btn>
         <v-btn text @click="modalActions.openContactModal">
           聯絡我們
-        </v-btn>
-        <v-btn text href="https://www.taiwanbear.org.tw/fqa/">
-          常見問題
         </v-btn>
         <v-btn text href="https://github.com/tai271828/disfactory-frontend/" target="_blank">
           關於通報系統
@@ -121,6 +121,8 @@
       <getting-started-modal :open="modalState.gettingStartedModalOpen" :dismiss="modalActions.closeGettingStartedModal" />
       <safety-modal v-model="modalState.safetyModalOpen" />
       <tutorial-modal :open="modalState.tutorialModalOpen" :dismiss="modalActions.closeTutorialModal" />
+      <distinction-modal :open="modalState.distinctionModalOpen" :dismiss="modalActions.closeDistinctionModal" />
+
       <ios-version-modal :open="modalState.supportIOSVersionModalOpen" :dismiss="modalActions.closesupportIOSVersionModal" />
       <!-- alert or modal -->
       <Map
@@ -151,6 +153,7 @@ import AboutModal from '@/components/AboutModal.vue'
 import ContactModal from '@/components/ContactModal.vue'
 import GettingStartedModal from '@/components/GettingStartedModal.vue'
 import TutorialModal from '@/components/TutorialModal.vue'
+import DistinctionModal from '@/components/DistinctionModal.vue'
 import SafetyModal from '@/components/SafetyModal.vue'
 import CreateFactorySuccessModal from '@/components/CreateFactorySuccessModal.vue'
 import UpdateFactorySuccessModal from '@/components/UpdateFactorySuccessModal.vue'
@@ -179,6 +182,7 @@ export default createComponent({
     CreateFactorySuccessModal,
     UpdateFactorySuccessModal,
     TutorialModal,
+    DistinctionModal,
     IosVersionModal,
     CreateFactorySteps,
     UpdateFactorySteps,
