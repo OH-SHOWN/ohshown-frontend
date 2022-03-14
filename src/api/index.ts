@@ -22,7 +22,7 @@ export type UploadedImages = {
 
 export async function getFactories (range: number, lng: number, lat: number): Promise<FactoriesResponse> {
   try {
-    const { data } = await instance.get(`/factories?range=${range}&lng=${lng}&lat=${lat}`)
+    const { data } = await instance.get(`/ohshown-events?range=${range}&lng=${lng}&lat=${lat}`)
     return data
   } catch (err) {
     console.error(err)
@@ -130,7 +130,7 @@ export async function updateFactoryImages (factoryId: string, files: FileList, {
 
 export async function createFactory (factory: FactoryPostData): Promise<FactoryData> {
   try {
-    const { data }: { data: FactoryData } = await instance.post('/factories', JSON.stringify(factory))
+    const { data }: { data: FactoryData } = await instance.post('/ohshown-events', JSON.stringify(factory))
 
     return data
   } catch (err) {
