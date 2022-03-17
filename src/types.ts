@@ -3,9 +3,7 @@ import Feature from 'ol/Feature'
 /* eslint-disable quote-props */
 export const REPORT_TYPE = [
   { value: '2-1', text: '目擊黑熊' },
-  { value: '2-2', text: '發現痕跡' },
-  { value: '2-3', text: '其他' },
-
+  { value: '2-2', text: '發現痕跡' }
 ] as const
 export type FactoryType = (typeof REPORT_TYPE)[number]['value']
 
@@ -128,23 +126,34 @@ export type FactoryPostData = {
   datetime: number,
   bearNumber: number,
   bears: Bear[],
+  ohshownFeeling: string,
   humanNumber: number,
   humanBehavior: number,
   humanBehaviorText?: string,
   distance: number,
   bearBehavior: number,
   bearBehaviorText?: string,
-  food: number,
-  foodText: string,
+  food: number[],
+  foodText: object,
   bearNotice: number,
   bearNoticeMinutes?: number,
-  humanReaction: number,
-  humanReactionText: string,
+  humanReaction: number[],
+  humanReactionText?: string,
   bearReaction: number[],
+  bearReactionText?: string,
   humanHurt: number,
-  humanHurtExplanation: string,
+  humanHurtDescription?: string,
+  traceType: number,
+  traceTypeText: string,
+  freshness: number,
+  freshnessNumber?: number,
+  imageAvailable: number,
+  otherInfo: string,
   ohShownAgain: number,
-  ohShownAgainReason: string
+  ohShownAgainReason: string,
+  preventOhshownMethods: number[],
+  preventOhshownMethodsText?: string,
+  surveyIfBearExist: number
 }
 
 export type ReportRecord = {
