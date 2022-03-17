@@ -1,7 +1,6 @@
 <template>
   <div class="confirm-factory-page">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12">
-      <h2 class="mt-2 mb-2 secondary--text">Page 3 填寫「目擊黑熊」問券</h2>
       <div v-if="formState.type === '2-1'" class="mb-3">
         <h2 class="mb-4 secondary--text">個體資訊</h2>
         <h3 class="mb-3 primary--text required">目擊個體數</h3>
@@ -215,31 +214,147 @@
             v-model="formState.humanHurtExplanation"
           ></v-text-field>
         </v-radio-group>
-        <h3 class="primary--text mt-2 mb-3">9. 您是否希望以後再看到野外的台灣黑熊？</h3>
-        <v-radio-group v-model="formState.ohShownAgain">
-          <v-radio
-            label="是"
-            value="1"
-          ></v-radio>
-          <v-radio
-            label="否"
-            value="0"
-          ></v-radio>
-          <v-text-field
-            outlined
-            placeholder="為什麼"
-            v-model="formState.ohShownAgainReason"
-          ></v-text-field>
-        </v-radio-group>
       </div>
       <div v-if="formState.type === '2-2'" class="mb-3">
-        <h2>發現痕跡</h2>
-        <h2>問券B</h2>
+        <h2 class="mb-2 secondary--text">發現黑熊痕跡</h2>
+        <h3 class="mb-2 primary--text">1. 類型</h3>
+        <v-radio-group v-model="formState.traceType" class="mt-0">
+          <v-radio
+            v-for="(name, index) in ['糞便', '腳印', '食痕', '折枝']"
+            :key="index"
+            :label="name"
+            :value="index"
+            class="mb-2"
+          ></v-radio>
+          <v-radio :value="4">
+            <template v-slot:label>
+              <v-text-field
+                v-model="formState.treeSpecies"
+                v-if="formState.traceType === 4"
+                label="爪痕(樹木/種類)"
+                placeholder="請填入文字"
+                class="pa-0 mt-4"
+              ></v-text-field>
+              <span v-if="formState.traceType !== 4">爪痕(樹木/種類)</span>
+            </template>
+          </v-radio>
+          <v-radio :value="5">
+            <template v-slot:label>
+              <v-text-field
+                v-model="formState.otherTraceType"
+                v-if="formState.traceType === 5"
+                label="其他"
+                placeholder="請填入文字"
+                class="pa-0 mt-4"
+              ></v-text-field>
+              <span v-if="formState.traceType !== 5">其他</span>
+            </template>
+          </v-radio>
+        </v-radio-group>
+        <h3 class="mb-2 primary--text">2. 新舊估計</h3>
+        <v-radio-group v-model="formState.freshness" class="mt-0">
+          <v-radio :value="0">
+            <template v-slot:label>
+              <span v-if="formState.freshness !== 0">新</span>
+              <v-text-field
+                v-model="formState.freshnessNumber"
+                v-if="formState.freshness === 0"
+                :autofocus="true"
+                label="新"
+                prefix="約"
+                suffix="天"
+                class="pa-0 mt-4"
+              ></v-text-field>
+            </template>
+          </v-radio>
+          <v-radio :value="1">
+            <template v-slot:label>
+              <span v-if="formState.freshness !== 1">新</span>
+              <v-text-field
+                v-model="formState.freshnessNumber"
+                v-if="formState.freshness === 1"
+                :autofocus="true"
+                label="舊"
+                prefix="約"
+                suffix="天"
+                class="pa-0 mt-4"
+              ></v-text-field>
+            </template>
+          </v-radio>
+          <v-radio
+            label="不清楚"
+            :value="2"
+          ></v-radio>
+        </v-radio-group>
+        <h3 class="primary--text">3. 是否提供影像檔案</h3>
+        <v-radio-group v-model="formState.imageAvailable" row>
+          <v-radio
+            v-for="(name, index) in ['有', '無']"
+            :key="index"
+            :label="name"
+            :value="index"
+          ></v-radio>
+        </v-radio-group>
+        <h3 class="mb-2 primary--text">4. 其他補充說明</h3>
+        <v-text-field
+          outlined
+          v-model="formState.otherInfo"
+        ></v-text-field>
       </div>
-      <div v-if="formState.type === '2-3'" class="mb-3">
-        <h2>其他</h2>
-        <h2>問券C</h2>
-      </div>
+      <h2 class="mb-2 secondary--text">下一次，如果有機會的話</h2>
+      <h3 class="mb-2 primary--text">1. 您是否希望以後再看到野外的黑熊？</h3>
+      <v-radio-group v-model="formState.ohshownAgain" class="mt-0">
+        <v-radio
+          v-for="(name, index) in ['是', '否', '沒意見']"
+          :key="index"
+          :label="name"
+          :value="index"
+          class="mb-2"
+        ></v-radio>
+      </v-radio-group>
+      <v-text-field
+        label="為什麼"
+        outlined
+        v-model="formState.ohshownAgainReason"
+      ></v-text-field>
+      <h3 class="primary--text mt-2 mb-3">2. 您知道以下哪些做法有助於減少遇到熊的機會，或避免不愉快地與熊相遇？ (可複選)</h3>
+      <v-checkbox
+        v-model="formState.preventOhshownMethods"
+        v-for="(name, index) in ['盡量結伴同行' , '輕聲走路' , '必要時，沿途製造些聲響，如吹口哨、講話', '避免走夜路' , '妥善收存食物、垃圾與廚餘' , '看到熊在遠方時，人要輕聲離開現場', '單獨行動' , '隨身攜帶哨子或鈴鐺' , '攜帶防熊噴霧']"
+        :key="index"
+        :label="name"
+        :value="index"
+        hide-details
+      ></v-checkbox>
+      <v-checkbox
+        v-model="formState.preventOhshownMethods"
+        hide-details
+        class="shrink mr-2 mt-0"
+      >
+        <template v-slot:label>
+          <span v-if="formState.freshness !== 1">新</span>
+          <v-text-field
+            v-model="formState.freshnessNumber"
+            v-if="formState.freshness === 1"
+            :autofocus="true"
+            label="舊"
+            prefix="約"
+            suffix="天"
+            class="pa-0 mt-4"
+          ></v-text-field>
+        </template>
+      </v-checkbox>
+      <v-text-field label="Include files"></v-text-field>
+      <h3 class="primary--text mt-6 mb-3">3. 您是否會先了解您預計前往的地點有無黑熊出沒？</h3>
+      <v-radio-group v-model="formState.ifBearExist" class="mt-0" row>
+        <v-radio
+          v-for="(name, index) in ['是', '否']"
+          :key="index"
+          :label="name"
+          :value="index"
+          class="mb-2"
+        ></v-radio>
+      </v-radio-group>
       <div class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9">
         <v-btn x-large rounded @click="submit" style="width: 100%; max-width: 345px;" color="primary">
           下一步
