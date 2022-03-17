@@ -482,7 +482,7 @@ export default createComponent({
 
       try {
         const [lng, lat]: number[] = appState.factoryLocation
-        const bears = [...Array(createFactoryFormState.bearNumber).keys()].map(index => ({
+        const bears = [...Array(createFactoryFormState.bearNumber || 0).keys()].map(index => ({
           bearType: createFactoryFormState.bearType[index],
           bearSize: createFactoryFormState.bearSize[index],
           bearSex: createFactoryFormState.bearSex[index],
