@@ -318,7 +318,7 @@
         ></v-text-field>
       </div>
       <h2 class="mb-2 secondary--text">下一次，如果有機會的話</h2>
-      <h3 class="mb-2 primary--text">1. 您是否希望以後再看到野外的黑熊？</h3>
+      <h3 class="mb-2 primary--text">1. 您是否希望以後有機會，或能再次看到野外的黑熊？</h3>
       <v-radio-group v-model="formState.ohshownAgain" class="mt-0">
         <v-radio
           v-for="(name, index) in ['是', '否', '沒意見']"
