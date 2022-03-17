@@ -84,6 +84,7 @@
             v-model="formState.groundTypes"
             :label="groundType"
             :value="groundType"
+            hide-details
           >
           </v-checkbox>
         </div>
@@ -97,6 +98,7 @@
             v-model="formState.vegetations"
             :label="vegetation"
             :value="vegetation"
+            hide-details
           />
         </div>
 
@@ -112,19 +114,39 @@
             v-model="formState.bearAttractors"
             :label="attractor"
             :value="attractor"
+            hide-details
           />
         </div>
       </div>
       <hr />
-
+      <h3 class="mt-5 mb-2 primary--text">在這之前是否曾看過野外的台灣黑熊？</h3>
+      <v-radio-group v-model="formState.alreadyOhshown" class="mt-0">
+        <v-radio :value="1">
+          <template v-slot:label>
+            <v-text-field
+              v-model="formState.alreadyOhshownNumber"
+              label="是"
+              suffix="次"
+              autofocus
+              v-if="formState.alreadyOhshown === 1"
+            ></v-text-field>
+            <span v-if="formState.alreadyOhshown !== 1">是</span>
+          </template>
+        </v-radio>
+        <v-radio
+          label="否"
+          :value="0"
+        ></v-radio>
+      </v-radio-group>
       <h3 class="mt-5 mb-2 primary--text">我要通報...</h3>
-      <v-select
-        :items="reportTypeItems"
-        v-model="formState.type"
-        solo
-        outlined
-        placeholder="未選擇"
-      />
+      <v-radio-group v-model="formState.type" class="mt-0" row>
+        <v-radio
+          v-for="({ value, text }) in reportTypeItems"
+          :key="value"
+          :label="text"
+          :value="value"
+        />
+      </v-radio-group>
 
       <div
         class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9"

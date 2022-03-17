@@ -3,9 +3,7 @@ import Feature from 'ol/Feature'
 /* eslint-disable quote-props */
 export const REPORT_TYPE = [
   { value: '2-1', text: '目擊黑熊' },
-  { value: '2-2', text: '發現痕跡' },
-  { value: '2-3', text: '其他' },
-
+  { value: '2-2', text: '發現痕跡' }
 ] as const
 export type FactoryType = (typeof REPORT_TYPE)[number]['value']
 
@@ -126,25 +124,36 @@ export type FactoryPostData = {
   contact?: string,
   /** 遭遇時間timestamp */
   datetime: number,
-  bearNumber: number,
+  bearNumber: number | undefined,
   bears: Bear[],
-  humanNumber: number,
-  humanBehavior: number,
+  ohshownFeeling: string,
+  humanNumber: number | undefined,
+  humanBehavior: number | undefined,
   humanBehaviorText?: string,
-  distance: number,
-  bearBehavior: number,
+  distance: number | undefined,
+  bearBehavior: number | undefined,
   bearBehaviorText?: string,
-  food: number,
-  foodText: string,
-  bearNotice: number,
-  bearNoticeMinutes?: number,
-  humanReaction: number,
-  humanReactionText: string,
+  food: number[],
+  foodText: object,
+  bearNotice: number | undefined,
+  bearNoticeMinutes?: number | undefined,
+  humanReaction: number[],
+  humanReactionText?: string,
   bearReaction: number[],
-  humanHurt: number,
-  humanHurtExplanation: string,
-  ohShownAgain: number,
-  ohShownAgainReason: string
+  bearReactionText?: string,
+  humanHurt: number | undefined,
+  humanHurtDescription?: string,
+  traceType: number | undefined,
+  traceTypeText: string,
+  freshness: number | undefined,
+  freshnessNumber?: number | undefined,
+  imageAvailable: number | undefined,
+  otherInfo: string,
+  ohShownAgain: number | undefined,
+  ohShownAgainReason: string,
+  preventOhshownMethods: number[],
+  preventOhshownMethodsText?: string,
+  surveyIfBearExist: number | undefined
 }
 
 export type ReportRecord = {
