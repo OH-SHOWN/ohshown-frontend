@@ -35,7 +35,7 @@ export const useImageUpload = () => {
     uploadedImages.value = uploadedImages.value.filter(image => image.src !== src)
   }
 
-  const imageUploadFormValid = computed(() => uploadedImages.value.length > 0 && !imageUploadState.uploading)
+  const imageUploadFormValid = computed(() => !imageUploadState.uploading)
 
   return {
     selectedImages,
