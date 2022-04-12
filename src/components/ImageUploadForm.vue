@@ -6,8 +6,6 @@
     >
       <h2 class="mb-4 secondary--text">上傳黑熊出沒痕跡照片</h2>
 
-      <p>請至少上傳一張黑熊出沒痕跡照片。</p>
-
       <h3 class="mb-3 mt-7 primary--text required">黑熊出沒痕跡照片</h3>
 
       <div class="flex align-items-center mb-3">
@@ -27,7 +25,7 @@
         </v-btn>
 
         <span v-if="uploading && !disableProgressiveUpload">上傳中...</span>
-        <span v-if="valid && !uploading && !error && !disableProgressiveUpload">
+        <span v-if="valid && !uploading && !error && !disableProgressiveUpload && previewImages.length">
           上傳成功
           <v-icon class="primary--text">mdi-checkbox-marked-circle</v-icon>
         </span>
@@ -260,7 +258,7 @@ export default createComponent({
         context.emit("input", (e.target as HTMLInputElement).files);
       },
       onSubmit() {
-        if (props.valid && typeof props.submit === "function") {
+        if (props.valid && props.formState && props.formState.type && typeof props.submit === "function") {
           props.submit();
         }
       },
