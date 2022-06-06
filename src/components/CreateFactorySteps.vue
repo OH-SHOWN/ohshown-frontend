@@ -503,16 +503,13 @@ export default createComponent({
         if (mapController.value) {
           mapController.value.addFactories([resultFactory])
         }
+        pageTransition.closeFactoryPage()
+        openCreateFactorySuccessModal()
       } catch (e) {
         // TODO: handle create failure
       } finally {
         createFactoryFormState.submitting = false
       }
-
-      // TODO: if error, don't close factory page
-      pageTransition.closeFactoryPage()
-
-      openCreateFactorySuccessModal()
     }
 
     const showLongLat = ref(false)
