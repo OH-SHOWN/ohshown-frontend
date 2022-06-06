@@ -39,7 +39,7 @@ export default createComponent({
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  z-index: 1;
+  z-index: 2;
 
   img {
     margin-right: 17px;

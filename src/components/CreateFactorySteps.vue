@@ -506,7 +506,7 @@ export default createComponent({
         pageTransition.closeFactoryPage()
         openCreateFactorySuccessModal()
       } catch (e) {
-        // TODO: handle create failure
+        alertActions.showAlert('伺服器錯誤，請稍後再試')
       } finally {
         createFactoryFormState.submitting = false
       }
