@@ -14,7 +14,7 @@ Vue.use(VueCompositionApi)
 Vue.use(CoolLightBox)
 
 Vue.use(VueGtag, {
-  config: { id: 'UA-154739393-1' },
+  config: { id: 'UA-132228705-11' },
   enabled: process.env.NODE_ENV === 'production'
 })
 
