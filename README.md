@@ -8,6 +8,28 @@
 文件、程式碼與單元測試皆尚未更新完畢；歡迎大家直接送重構用程式碼、補丁與 Pull Request 。
 
 ## Project setup
+### Pre-requisite
+
+- Download nvm
+go to https://github.com/nvm-sh/nvm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
+```
+if you are using windows
+go to https://github.com/coreybutler/nvm-windows and download .zip
+
+- Download node(version 14 and 16 is not allowed)
+```
+nvm install 15.14.0
+```
+- git clone
+```
+git clone https://github.com/OH-SHOWN/ohshown-frontend.git
+```
+
+
+### Usage
+- 
 
 ```bash
 cp .env.example .env
@@ -19,6 +41,13 @@ npm install
 ```bash
 npm run serve
 ```
+- You can see the following words in the terminal if you success.
+```
+App running at:
+  - Local:   http://localhost:8080/
+  - Network: http://192.168.50.226:8080/
+```
+then click the URL.
 
 ### Compiles and minifies for production
 
