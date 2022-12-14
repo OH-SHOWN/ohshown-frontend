@@ -183,7 +183,7 @@
         >
           <template v-slot:label>
             <v-text-field
-              v-model="formState.humanReactionText[index]"
+              v-model="formState.humanReactionText"
               v-if="index === 8 && formState.humanReaction.includes(index)"
               :label="name"
               :autofocus="true"
@@ -204,7 +204,7 @@
         >
           <template v-slot:label>
             <v-text-field
-              v-model="formState.bearReactionText[index]"
+              v-model="formState.bearReactionText"
               v-if="index === 7 && formState.bearReaction.includes(index)"
               :label="name"
               :autofocus="true"
