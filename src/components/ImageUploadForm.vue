@@ -81,7 +81,7 @@
             :key="`${groundType}${index}`"
             v-model="formState.groundTypes"
             :label="groundType"
-            :value="groundType"
+            :value="index"
             hide-details
           >
           </v-checkbox>
@@ -95,7 +95,7 @@
             :key="`${vegetation}${index}`"
             v-model="formState.vegetations"
             :label="vegetation"
-            :value="vegetation"
+            :value="index"
             hide-details
           />
         </div>
@@ -111,7 +111,7 @@
             :key="`${attractor}${index}`"
             v-model="formState.bearAttractors"
             :label="attractor"
-            :value="attractor"
+            :value="index"
             hide-details
           />
         </div>
