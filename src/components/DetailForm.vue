@@ -80,7 +80,7 @@
               <v-text-field
                 label="工作"
                 placeholder="請填入文字"
-                v-model="formState.humanBehaviorText"
+                v-model="formState.humanBehaviorTextObject[4]"
                 v-if="formState.humanBehavior === 4"
               ></v-text-field>
               <span v-if="formState.humanBehavior !== 4">工作</span>
@@ -91,7 +91,7 @@
               <v-text-field
                 label="其他"
                 placeholder="請填入文字"
-                v-model="formState.humanBehaviorText"
+                v-model="formState.humanBehaviorTextObject[5]"
                 v-if="formState.humanBehavior === 5"
               ></v-text-field>
               <span v-if="formState.humanBehavior !== 5">其它</span>
@@ -122,7 +122,7 @@
               <v-text-field
                 label="其他"
                 placeholder="請填入文字"
-                v-model="formState.bearBehaviorText"
+                v-model="formState.bearBehaviorTextObject[5]"
                 v-if="formState.bearBehavior === 5"
               ></v-text-field>
               <span v-if="formState.bearBehavior !== 5">其他</span>
@@ -141,7 +141,7 @@
           >
             <template v-slot:label>
               <v-text-field
-                v-model="formState.foodText[index]"
+                v-model="formState.foodTextObject[index]"
                 v-if="[4, 5, 7, 9, 10].includes(index) && formState.food.includes(index)"
                 :label="name"
                 placeholder="請填入名稱"
@@ -183,7 +183,7 @@
         >
           <template v-slot:label>
             <v-text-field
-              v-model="formState.humanReactionText"
+              v-model="formState.humanReactionTextObject[index]"
               v-if="index === 8 && formState.humanReaction.includes(index)"
               :label="name"
               :autofocus="true"
@@ -204,7 +204,7 @@
         >
           <template v-slot:label>
             <v-text-field
-              v-model="formState.bearReactionText"
+              v-model="formState.bearReactionTextObject[index]"
               v-if="index === 7 && formState.bearReaction.includes(index)"
               :label="name"
               :autofocus="true"
@@ -245,7 +245,7 @@
           <v-radio :value="4">
             <template v-slot:label>
               <v-text-field
-                v-model="formState.traceTypeText"
+                v-model="formState.traceTypeTextObject[4]"
                 v-if="formState.traceType === 4"
                 label="爪痕(樹木/種類)"
                 placeholder="請填入文字"
@@ -257,7 +257,7 @@
           <v-radio :value="5">
             <template v-slot:label>
               <v-text-field
-                v-model="formState.traceTypeText"
+                v-model="formState.traceTypeTextObject[5]"
                 v-if="formState.traceType === 5"
                 label="其他"
                 placeholder="請填入文字"
@@ -268,13 +268,13 @@
           </v-radio>
         </v-radio-group>
         <h3 class="mb-2 primary--text">2. 新舊估計</h3>
-        <v-radio-group v-model="formState.freshness" class="mt-0">
+        <v-radio-group v-model="formState.ageType" class="mt-0">
           <v-radio :value="0">
             <template v-slot:label>
-              <span v-if="formState.freshness !== 0">新</span>
+              <span v-if="formState.ageType !== 0">新</span>
               <v-text-field
-                v-model="formState.freshnessNumber"
-                v-if="formState.freshness === 0"
+                v-model="formState.ageNumber"
+                v-if="formState.ageType === 0"
                 :autofocus="true"
                 label="新"
                 prefix="約"
@@ -285,10 +285,10 @@
           </v-radio>
           <v-radio :value="1">
             <template v-slot:label>
-              <span v-if="formState.freshness !== 1">舊</span>
+              <span v-if="formState.ageType !== 1">舊</span>
               <v-text-field
-                v-model="formState.freshnessNumber"
-                v-if="formState.freshness === 1"
+                v-model="formState.ageNumber"
+                v-if="formState.ageType === 1"
                 :autofocus="true"
                 label="舊"
                 prefix="約"
@@ -344,7 +344,7 @@
       >
         <template v-slot:label>
           <v-text-field
-            v-model="formState.preventOhshownMethodsText"
+            v-model="formState.preventOhshownMethodsTextObject[9]"
             v-if="index === 9 && formState.preventOhshownMethods.includes(index)"
             :label="name"
             :autofocus="true"
