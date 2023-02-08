@@ -438,24 +438,24 @@ export default createComponent({
       ohshownFeeling: '', // 看到熊當下，目擊者的感覺
       humanNumber: undefined, // 目擊熊當下人數
       humanBehavior: undefined, // 目擊者目擊當下在做什麼
-      humanBehaviorText: '', // 目擊者目擊當下在做什麼-文字補充
+      humanBehaviorTextObject: {}, // 目擊者目擊當下在做什麼-文字補充
       distance: undefined, // 目擊當下，目擊者與熊之間的距離
       bearBehavior: undefined, // 目擊當下，熊在做什麼
-      bearBehaviorText: '', // 目擊當下，熊在做什麼-文字補充
+      bearBehaviorTextObject: {}, // 目擊當下，熊在做什麼-文字補充
       food: [], // 黑熊食物
-      foodText: {}, // 黑熊食物-文字補充
+      foodTextObject: {}, // 黑熊食物-文字補充
       bearNotice: undefined, // 黑熊何時注意到人員存在
       bearNoticeMinutes: undefined, // 目擊後約X分鐘黑熊發現人員存在-數字補充
       humanReaction: [], // 目擊黑熊後，目擊者反應
-      humanReactionText: '', // 目擊者反應-文字補充
+      humanReactionTextObject: {}, // 目擊者反應-文字補充
       bearReaction: [], // 黑熊發現目擊者後，黑熊的反應
-      bearReactionText: '', // 黑熊反應-文字補充
+      bearReactionTextObject: {}, // 黑熊反應-文字補充
       humanHurt: undefined, // 是否有人受傷或意外發生
       humanHurtDescription: '', // 是否有人受傷或意外發生-文字補充
 
       // 發現黑熊痕跡
       traceType: undefined, // 痕跡類型
-      traceTypeText: '', // 痕跡類型-文字補充
+      traceTypeTextObject: {}, // 痕跡類型-文字補充
       freshness: undefined, // 新舊估計
       freshnessNumber: undefined, // 新舊估計-數字補充
       imageAvailable: undefined, // 是否提供影像檔案
@@ -465,7 +465,7 @@ export default createComponent({
       ohShownAgain: undefined, // 目擊者是否希望以後再看到野外的黑熊
       ohShownAgainReason: '', // 目擊者是否希望以後再看到野外的黑熊-原因
       preventOhshownMethods: [], // 您知道以下哪些做法有助於減少遇到熊的機會，或避免不愉快地與熊相遇
-      preventOhshownMethodsText: '', // 您知道以下哪些做法有助於減少遇到熊的機會，或避免不愉快地與熊相遇-文字補充
+      preventOhshownMethodsTextObject: {}, // 您知道以下哪些做法有助於減少遇到熊的機會，或避免不愉快地與熊相遇-文字補充
       surveyIfBearExist: undefined // 您是否會先了解您預計前往的地點有無黑熊出沒
     })
 
