@@ -462,8 +462,8 @@ export default createComponent({
       otherInfo: '', // 其他補充說明
 
       // 下一次，如果有機會的話
-      ohShownAgain: undefined, // 目擊者是否希望以後再看到野外的黑熊
-      ohShownAgainReason: '', // 目擊者是否希望以後再看到野外的黑熊-原因
+      ohshownAgain: undefined, // 目擊者是否希望以後再看到野外的黑熊
+      ohshownAgainReason: '', // 目擊者是否希望以後再看到野外的黑熊-原因
       preventOhshownMethods: [], // 您知道以下哪些做法有助於減少遇到熊的機會，或避免不愉快地與熊相遇
       preventOhshownMethodsTextObject: {}, // 您知道以下哪些做法有助於減少遇到熊的機會，或避免不愉快地與熊相遇-文字補充
       surveyIfBearExist: undefined // 您是否會先了解您預計前往的地點有無黑熊出沒

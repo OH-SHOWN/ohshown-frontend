@@ -149,8 +149,8 @@ export type FactoryPostData = {
   ageNumber?: number | undefined,
   imageAvailable: number | undefined,
   otherInfo: string,
-  ohShownAgain: number | undefined,
-  ohShownAgainReason: string,
+  ohshownAgain: number | undefined,
+  ohshownAgainReason: string,
   preventOhshownMethods: number[],
   preventOhshownMethodsTextObject: object,
   surveyIfBearExist: number | undefined
