@@ -268,13 +268,13 @@
           </v-radio>
         </v-radio-group>
         <h3 class="mb-2 primary--text">2. 新舊估計</h3>
-        <v-radio-group v-model="formState.freshness" class="mt-0">
+        <v-radio-group v-model="formState.ageType" class="mt-0">
           <v-radio :value="0">
             <template v-slot:label>
-              <span v-if="formState.freshness !== 0">新</span>
+              <span v-if="formState.ageType !== 0">新</span>
               <v-text-field
-                v-model="formState.freshnessNumber"
-                v-if="formState.freshness === 0"
+                v-model="formState.ageNumber"
+                v-if="formState.ageType === 0"
                 :autofocus="true"
                 label="新"
                 prefix="約"
@@ -285,10 +285,10 @@
           </v-radio>
           <v-radio :value="1">
             <template v-slot:label>
-              <span v-if="formState.freshness !== 1">舊</span>
+              <span v-if="formState.ageType !== 1">舊</span>
               <v-text-field
-                v-model="formState.freshnessNumber"
-                v-if="formState.freshness === 1"
+                v-model="formState.ageNumber"
+                v-if="formState.ageType === 1"
                 :autofocus="true"
                 label="舊"
                 prefix="約"

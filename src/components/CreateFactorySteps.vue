@@ -456,8 +456,8 @@ export default createComponent({
       // 發現黑熊痕跡
       traceType: undefined, // 痕跡類型
       traceTypeTextObject: {}, // 痕跡類型-文字補充
-      freshness: undefined, // 新舊估計
-      freshnessNumber: undefined, // 新舊估計-數字補充
+      ageType: undefined, // 新舊估計
+      ageNumber: undefined, // 新舊估計-數字補充
       imageAvailable: undefined, // 是否提供影像檔案
       otherInfo: '', // 其他補充說明
 
